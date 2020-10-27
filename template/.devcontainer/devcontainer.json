@@ -1,0 +1,41 @@
+{
+	"name": "groovy-devcontainer",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspace",
+	"shutdownAction": "stopCompose",
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/zsh",
+		// General settings
+		"files.eol": "\n",
+		// Docker
+		"remote.extensionKind": {
+			"ms-azuretools.vscode-docker": "workspace"
+        },
+        // Java
+		"java.home": "/usr/local/openjdk-11"
+	},
+	"extensions": [
+        // Console
+		"IBM.output-colorizer",
+		// Git
+		"eamodio.gitlens",
+		"mhutchie.git-graph",
+		// Docker
+		"ms-azuretools.vscode-docker",
+		// Language Support
+		"vscjava.vscode-java-pack",
+		"VisualStudioExptTeam.vscodeintellicode",
+		"richardwillis.vscode-gradle",
+        // Linters and Formatters
+		"davidanson.vscode-markdownlint",
+		"editorconfig.editorconfig",
+		"mohsen1.prettify-json",
+		"shardulm94.trailing-spaces",
+		// Editor Helpers
+		"quicktype.quicktype", // paste json as code
+		"vscode-icons-team.vscode-icons"
+    ],
+    // Comment out to connect as root instead.
+	"remoteUser": "vscode"
+}

@@ -1,0 +1,21 @@
+version: "3.7"
+
+services:
+  app:
+    user: vscode
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+      args:
+        USER_UID: 1000
+        USER_GID: 1000
+        # add any additional Debian OS dependencies installed using apt-get
+        DEBIAN_DEPS: ""
+         # add any npm dependencies installed using npm install
+        NPM_DEPS: ""
+    volumes:
+      - ..:/workspace:cached
+      - ~/.gitconfig:/root/.gitconfig
+      - ~/.ssh:/home/vscode/.ssh:ro
+      - ~/.ssh:/root/.ssh:ro
+      - /var/run/docker.sock:/var/run/docker-host.sock
